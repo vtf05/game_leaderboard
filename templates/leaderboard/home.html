@@ -1,0 +1,20 @@
+{% extends "leaderboard/base.html" %}
+{% block title %}Games{% endblock %}
+{% block content %}
+<div class="text-center">
+  <h1 class="mb-4">Games List</h1>
+</div>
+<div class="row">
+  {% for game in games %}
+  <div class="col-md-4">
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ game.title }}</h5>
+        <p class="card-text">Upvotes: {{ game.upvotes }}</p>
+        <a href="{% url 'game_leaderboard' game.id %}" class="btn btn-primary">View Leaderboard</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

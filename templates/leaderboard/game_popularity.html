@@ -1,0 +1,21 @@
+{% extends "leaderboard/base.html" %}
+{% block title %}Game Popularity{% endblock %}
+{% block content %}
+<h1 class="text-center">Game Popularity</h1>
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Popularity Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for game in popularity_scores %}
+    <tr>
+      <td>{{ game.game }}</td>
+      <td>{{ game.popularity_score|floatformat:2 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

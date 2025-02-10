@@ -1,0 +1,23 @@
+{% extends "leaderboard/base.html" %}
+{% block title %}Global Leaderboard{% endblock %}
+{% block content %}
+<h1 class="text-center">Global Leaderboard</h1>
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Contestant</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for score in scores %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ score.game_session__contestant__name }}</td>
+      <td>{{ score.total_score }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
