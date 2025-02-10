@@ -155,7 +155,3 @@ The second call should show different results because the popularity index updat
 - Enhance API support with Django REST Framework.
 
 ---
-
-## License
-
-MIT License
